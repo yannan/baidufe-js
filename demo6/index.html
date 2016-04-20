@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>队列</title>
+	<style>
+		#content {
+			margin-top: 20px;
+		} 
+		span {
+			padding: 10px;
+			margin: 5px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<input type="text" id="textInput">
+		<button id="leftIn">左侧入</button>
+		<button id="rightIn">右侧入</button>
+		<button id="leftOut">左侧出</button>
+		<button id="rightOut">右侧出</button>
+		<div id="content"></div>
+	</div>
+
+<script>
+	var oInput = document.getElementById('textInput');
+	var oCon = document.getElementById('content');
+	var iLeftin = document.getElementById('leftIn');
+	var iLeftout = document.getElementById('leftOut');
+	var iRightin = document.getElementById('rightIn');
+	var iRightout = document.getElementById('rightOut');
+	var queue = [];
+	iLeftin.onclick = function() {
+		if (validate_number(oInput.value)) {
+			queue.unshift(validate_number(oInput.value));
+			render();
+		};
+		
+	}
+	iLeftout.onclick = function() {
+		if (queue.length) {
+			alert(queue.shift());
+			render();
+		}
+		
+	}
+	iRightin.onclick = function() {
+		if (validate_number(oInput.value)) {
+			queue.push(validate_number(oInput.value));
+			render();
+		};
+	}
+	iRightout.onclick = function() {
+		if(queue.length) {
+			alert(queue.pop());
+			render();
+		}
+	}
+
+	function validate_number(value) {
+		// 验证输入是否为数字
+		var r = /^[1-9]+[0-9]*$/;
+		value = trim(value);
+
+		if(r.test(value)) return value;
+
+		alert('请输入数字');
+	}
+
+	function trim(str){ //删除左右两端的空格
+	　　return str.replace(/(^\s*)|(\s*$)/g, "");
+	};
+	function render() {
+		var text = '';
+		oCon.innerHTML = '';
+		for(var i=0; i<queue.length; i++) {
+			text += '<span>' + queue[i] + '</span>';
+		}
+		oCon.innerHTML = text;
+	}
+</script>
+</body>
+</html>
