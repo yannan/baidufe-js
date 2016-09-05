@@ -1,0 +1,161 @@
+.leftbar {
+	width: 260px;
+	height: 100%;
+	background: #2a2e3d;
+	overflow: hidden;
+}
+.user-info {
+	margin-top: 16px;
+}
+.user-info-part1 {
+	margin-left: 45px;
+}
+.user-photo	{
+	width: 52px;
+	height: 52px;
+	padding: 5px;
+	border-radius: 50%;
+	border: solid 2px $grey;
+
+	span {
+		display: block;
+		width: 100%;
+		height:100%;
+		background: darken($grey, 10%);
+		border-radius: 50%;
+	}
+}
+.user-name {
+	max-width: 100px;
+	margin-left: 18px;
+	color: $grey;
+	font-size: 16px;
+	line-height: 57px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+.user-info-part2 {
+	margin-top: 20px;
+	color: $leftColor;
+	font-size: 0;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		width: 100px;
+		font-size: 12px;
+
+		&:first-child {
+			border-right: solid 1px #313545;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+}
+.leftbar-menu {
+	margin-top: 20px;
+	color: $leftColor;
+
+	li {
+		padding: 15px 0;
+		padding-left: 45px;
+
+		h3 {
+			height: 12px;
+			padding-left: 25px;
+			background: url(../images/icon_leftbar.png) no-repeat;
+			line-height: 12px;
+			cursor: pointer;
+		}
+
+		.menu2 {
+			background-position: 0 -12px;
+		}
+		.menu3 {
+			background-position: 0 -24px;
+		}
+		.menu4 {
+			@extend .menu2;
+		}
+		.menu5 {
+			@extend .menu2;
+		}
+		.menu6 {
+			background-position: 0 -36px;
+		}
+	}
+
+	li.current {
+		background: #383d4e;
+
+		h3 {
+			color: $grey;
+		}
+	}
+}
+.left-menu-child {
+	li {
+		margin: 15px 20px;
+		padding: 0;
+		padding-left: 0;
+
+		.icon-arrow {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			margin-right: 6px;
+			background: url(../images/icon_leftbar.png) no-repeat 0 -96px;
+			cursor: pointer;
+		}
+
+		h4 {
+			display: inline-block;
+			height: 12px;
+			padding-left: 16px;
+			background: url(../images/icon_leftbar.png) no-repeat 0 -48px;
+			cursor: pointer;
+			line-height: 12px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	li.current {
+		.icon-arrow {
+			background-position: 0 -108px;
+		}
+
+		h4 {
+			background-position: 0 -60px;
+			color: $grey;
+		}
+	}
+}
+.left-menu-gchild {
+	li {
+		margin-left: 35px;
+		padding: 0;
+
+		h5 {
+			display: block;
+			height: 12px;
+			padding-left: 16px;
+			background: url(../images/icon_leftbar.png) no-repeat 0 -84px;
+			cursor: pointer;
+			line-height: 12px;
+		}
+
+	}
+
+	li.current {
+		h5 {
+			color: $grey;
+			background-position: 0 -72px;
+		}
+	}
+}

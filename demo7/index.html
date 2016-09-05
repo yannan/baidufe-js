@@ -8,9 +8,9 @@
 			margin-top: 20px;
 		} 
 		span {
-			padding: 10px;
+			display: inline-block;
+			padding: 0 10px;
 			margin: 5px;
-			background: red;
 		}
 	</style>
 </head>
@@ -21,6 +21,8 @@
 		<button id="rightIn">右侧入</button>
 		<button id="leftOut">左侧出</button>
 		<button id="rightOut">右侧出</button>
+		<button id="sortData">排序</button>
+		<button id="testData">测试数据</button>
 		<div id="content"></div>
 	</div>
 
@@ -31,9 +33,19 @@
 	var iLeftout = document.getElementById('leftOut');
 	var iRightin = document.getElementById('rightIn');
 	var iRightout = document.getElementById('rightOut');
+	var iSortData = document.getElementById('sortData');
+	var iTestData = document.getElementById('testData');
 	var queue = [];
+
+	iTestData.onclick = function() {
+		queue = [];
+	    for (var i = 0; i < 50; i++) {
+	      queue.push(Math.floor(Math.random() * 91 + 10));
+	    }
+	    render();
+	}
 	iLeftin.onclick = function() {
-		if (validate_number(oInput.value)) {
+		if (validate_number(oInput.value) && !queue.isFull()) {
 			queue.unshift(validate_number(oInput.value));
 			render();
 		};
@@ -47,7 +59,7 @@
 		
 	}
 	iRightin.onclick = function() {
-		if (validate_number(oInput.value)) {
+		if (validate_number(oInput.value) && !queue.isFull()) {
 			queue.push(validate_number(oInput.value));
 			render();
 		};
@@ -69,25 +81,48 @@
 			render();
 		};
 	})
+	iSortData.onclick = function() {
+		queue.sort(function(a, b) {
+			return a-b;
+		});
+		setTimeout(render, 10);
+	};
 
 	function validate_number(value) {
 		// 验证输入是否为数字
-		var r = /^[1-9]+[0-9]*$/;
+		var r = /^[1-9][0-9]$/;
 		value = trim(value);
 
 		if(r.test(value)) return value;
 
-		alert('请输入数字');
-	}
+		alert('请输入10-100之间的数字');
+	};
 
 	function trim(str){ //删除左右两端的空格
 	　　return str.replace(/(^\s*)|(\s*$)/g, "");
 	};
+	Array.prototype.isFull = function() {
+		// 队列是否满员
+		if (queue.length >= 40) {
+			alert("队列已满");
+			return 1;
+		};
+	};
+
+	function randomColor() {
+		// 生成随机颜色
+		return  '#' +   
+		    (function(color){   
+		    return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])   
+		      && (color.length == 6) ?  color : arguments.callee(color);   
+		  })(''); 
+	};
+
 	function render() {
 		var text = '';
 		oCon.innerHTML = '';
 		for(var i=0; i<queue.length; i++) {
-			text += '<span>' + queue[i] + '</span>';
+			text += '<span style="height:' + queue[i] + 'px;background:' + randomColor() + ';"></span>';
 		}
 		oCon.innerHTML = text;
 	}

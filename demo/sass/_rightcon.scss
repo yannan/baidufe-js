@@ -1,0 +1,323 @@
+.rightcon {
+	width: 1020px;
+	height: 100%;
+	background: #eeeeed;
+}
+.bread-menu {
+	height: 30px;
+	padding-left: 30px;
+	background: $white;
+	color: $txtColor;
+	line-height: 30px;
+
+	a {
+		padding: 0 3px;
+		color: $txtColor;
+
+		&:hover,
+		&.current {
+			color: $blue;
+		}
+	}
+}
+.rightcon-main {
+	width: 890px;
+	margin: 20px auto;
+}
+.option-menu {
+	padding: 14px 28px;
+	background: $white;
+	border: solid 1px #dddfe1;
+	color: $txtColor;
+}
+.option-group {
+	margin-right: 25px;
+}
+.option-group2 {
+	padding-right: 24px;
+	background: url(../images/change.png) no-repeat right center;
+}
+.option-group-list {
+	margin: 4px;
+	line-height: 25px;
+
+	span {
+		display: inline-block;
+		width: 40px;
+		height: 23px;
+		margin-left: 14px;
+		padding: 0 20px 0 10px;
+		background: url(../images/icon_select.png) no-repeat 50px -26px;
+		border: solid 1px $txtColor;
+		color: $black;
+		cursor: pointer;
+
+		&:hover {
+			background-position: 51px -2px;
+		}
+
+		&.long {
+			width: 90px;
+			background-position: 100px -26px;
+		}
+		&.long:hover {
+			background-position: 101px -2px;
+		}
+	}
+
+	input {
+		width:100px;
+		margin-left: 14px;
+		padding: 3px 10px;
+		border: solid 1px $txtColor;
+		color: $black;
+	}
+}
+.item-list {
+	margin-top: 8px;
+
+	li {
+		float: left;
+		width: 110px;
+		height: 63px;
+		margin-right: 4px;
+		background: $white;
+		border-top: solid 1px $txtColor;
+		border-left: solid 1px $txtColor;
+		text-align: center;
+		cursor: pointer;
+
+		&:hover {
+			margin-top: -2px;
+			border-top: solid 3px $blue;
+		}
+
+		span {
+			display: block;
+			margin-top:10px;
+		}
+
+		p {
+			margin-top: 2px;
+			font-size: 21px;
+			color: #ec6500;
+		}
+
+		i {
+			font-style: normal;
+			font-size: 14px;
+			color: $txtColor;
+		}
+	}
+}
+.item-list-pre {
+	width: 30px;
+	height: 63px;
+	background: $white no-repeat;
+	background-image: url(../images/icon_item.png);
+	background-position: 10px 23px;
+	border-top: solid 1px $txtColor;
+	border-left: solid 1px $txtColor;
+	cursor: pointer;
+}
+.item-list-next {
+	@extend .item-list-pre;
+	background-position: -20px 23px;
+}
+.history-query {
+	@extend .item-list-pre;
+	width: 125px;
+	margin-left: 5px;
+	background-image: url(../images/calander.png);
+	background-position: 17px 14px;
+	line-height: 63px;
+	text-indent: 60px;
+}
+.count-month {
+	h2 {
+		line-height: 2;
+	}
+
+	li {
+		float: left;
+		width: 200px;
+		height: 46px;
+		margin-left: 24px;
+		padding: 12px 0;
+		background: $white;
+		border: solid 1px $txtColor;
+		border-left-width: 3px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.number {
+		margin-left: 8px;
+	}
+
+	p {
+		color: $txtColor;
+		font-size: 10px;
+		line-height: 2;
+	}
+
+	h3 {
+		line-height: 2;
+	}
+
+	.rect {
+		width: 60px;
+		height: 46px;
+		margin-right: 15px;
+	}
+
+	.list1 {
+		border-left-color: $listColor1;
+
+		.rect {
+			background: $listColor1;
+		}
+	}
+
+	.list2 {
+		border-left-color: $listColor2;
+
+		.rect {
+			background: $listColor2;
+		}
+	}
+
+	.list3 {
+		border-left-color: $listColor3;
+
+		.rect {
+			background: $listColor3;
+		}
+	}
+
+	.list4 {
+		border-left-color: $listColor4;
+
+		.rect {
+			background: $listColor4;
+		}
+	}
+}
+.panel {
+	border: solid 1px $txtColor;
+	border-radius: 5px;
+}
+.panel-header {
+		padding: 0 20px;
+		background: #f3f5f6;
+		line-height: 40px;
+		border-bottom: solid 1px $grey;
+		border-radius: 5px 5px 0 0;
+		color: darken($txtColor, 10%);
+}
+
+.panel-body {
+	padding: 20px;
+	background: $white;
+	border-radius: 0 0 5px 5px;
+	overflow: hidden;
+}
+
+.project-list {
+	margin-bottom: -1px;
+
+	li {
+		float: left;
+		width: 85px;
+		height: 25px;
+		margin-right: 3px;
+		background: lighten($txtColor, 21%);
+		border: solid 1px lighten($txtColor, 21%);
+		border-bottom-color: $txtColor;
+		border-radius: 3px 3px 0 0;
+		line-height: 25px;
+		text-align: center;
+		cursor: pointer;
+
+		&.current {
+			background: $white;
+			border: solid 1px $txtColor;
+			border-bottom-color: $white;
+		}
+	}
+}
+
+.project-table {
+	padding: 35px 40px;
+	border: solid 1px $txtColor;
+	border-radius: 0 3px 3px 3px;
+
+	td {
+		width: 100px;
+		height: 30px;
+		border: solid 1px $txtColor;
+		line-height: 30px;
+		text-align: center;
+
+		&:hover {
+			background: lighten($grey, 5%);
+		}
+
+		&.current {
+			background: lighten($grey, 5%);
+		}
+	}
+}
+
+.project-table-detail {
+	line-height: 20px;
+	border-bottom: solid 1px $txtColor;
+
+	table {
+		width: 280px;
+		margin: 5px 15px;
+		border-top: solid 1px $txtColor;
+		border-bottom: solid 1px $txtColor;
+		line-height: 20px;
+	}
+
+	td {
+		padding-left: 10px;
+		border-left: solid 1px $txtColor;
+
+		&:first-child {
+			border: 0;
+		}
+	}
+
+	th {
+		@extend td;
+		color: $txtColor;
+	}
+
+	h4 {
+		padding-left: 25px;
+		color: $txtColor;
+	}
+
+	p {
+		padding-left: 25px;
+	}
+
+	.describe {
+		height: 120px;
+	}
+	
+}
+
+.widget {
+	color: $txtColor;
+	padding-bottom: 22px;
+
+	input[type=checkbox] {
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+}

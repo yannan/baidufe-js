@@ -1,0 +1,14 @@
+.btn-primary {
+	width: 50px;
+	height: 25px;
+	background: $blue;
+	border-radius: 1px;
+	color: $white;
+	line-height: 25px;
+	text-align: center;
+	cursor: pointer;
+
+	&:hover {
+		background: lighten($blue, 5%);
+	}
+}
